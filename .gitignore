@@ -2,3 +2,15 @@ comments_sentiment_analysis/ai_challenger_sentiment_analysis_testa_20180816/
 comments_sentiment_analysis/ai_challenger_sentiment_analysis_trainingset_20180816/
 comments_sentiment_analysis/ai_challenger_sentiment_analysis_validationset_20180816/
 .DS_Store
+
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
+src/_drafts
+package-lock.json
+
+__pycache__
