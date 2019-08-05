@@ -10,7 +10,7 @@
         href="https://github.com/shlinym/funny_AI"
         target="_blank"
       >
-        <span class="mr-2">Latest Release</span>
+        <span class="mr-2">github</span>
       </v-btn>
     </v-app-bar>
 
