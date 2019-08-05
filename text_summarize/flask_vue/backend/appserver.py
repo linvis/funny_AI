@@ -13,6 +13,7 @@ import sys
 import json
 
 from keywords import KeyWord
+from summa import SenVec
 
 
 app = Flask(__name__,
@@ -22,9 +23,12 @@ app = Flask(__name__,
 CORS(app)
 
 keyword = None
+senvec = None
 def init():
     global keyword
+    global senvec
     keyword = KeyWord(words=5)
+    senvec = SenVec()
 
 init()
 
@@ -50,7 +54,8 @@ def get_news():
         print(text, file=sys.stdout)
 
         top_words = keyword.extract(text)
+        top_sens = senvec.summarization(text)[:5]
         # print(request.get_data(), file=sys.stdout)
 
 
-    return jsonify(keywords=top_words)
+    return jsonify(keywords=top_words, summa=top_sens)

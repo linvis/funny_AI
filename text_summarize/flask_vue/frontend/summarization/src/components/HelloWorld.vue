@@ -39,6 +39,21 @@
       </v-chip>
     </div>
 
+    <v-flex 
+      mb-6
+      xs12
+    ></v-flex>
+
+    <div class="text-left" v-show="!hidden">
+      <span>summarization</span>
+      <v-chip
+        class="ma-2"
+        v-for='kv in summa' v-bind:key="kv.id"
+      >
+      {{ kv }}
+      </v-chip>
+    </div>
+
     </v-layout>
 
   </v-container>
@@ -50,7 +65,8 @@ export default {
     hidden: true,
     text: "自动摘要是使用软件缩短文本文档的过程，以便创建包含原始文档主要点的摘要。\
 可以进行连贯性总结的技术会考虑诸如长度，书写风格和语法等变量。",
-    keywords: []
+    keywords: [],
+    summa: []
   }),
 
   methods: {
@@ -62,6 +78,7 @@ export default {
       })
       .then(function (response) {
         self.keywords = response.data.keywords
+        self.summa = response.data.summa
         self.hidden = false
       })
       .catch(function (){
