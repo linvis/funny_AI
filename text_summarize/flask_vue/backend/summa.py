@@ -99,6 +99,8 @@ class SenVec:
             if not sen: continue
                 
             words = self.__cut_to_tokens(sen)
+
+            if not words: continue
             
             vector_s = [self.__calc(word) for word in words if word]
                 
